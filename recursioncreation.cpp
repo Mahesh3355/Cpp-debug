@@ -1,16 +1,21 @@
 #include<iostream>
 using namespace std;
-
-
-//create a recursive funtion of the following logic given in the main function.
-
-int main(){
-    int n ;
-    cout<<"Enter the number : ";
-    cin>>n;
-    int ans = 1; 
-    for(int i = n ; i  >= 1 ;i--){
-        ans = ans * i;   
-    }
-    cout<<ans<<endl;
+//recursive function for factorialsq
+int fac(int n)
+{
+  if (n == 1)
+  {
+    return 1;
+  }
+  else
+    return n = n * fac(n - 1);
+}
+int main()
+{
+  int n;
+  cout << "enter the number:" << endl;
+  cin >> n;
+  // factorial calculation of number
+  int ans = fac(n);
+  cout << "the factorial of the number " << n << " is:" << ans << endl;
 }
