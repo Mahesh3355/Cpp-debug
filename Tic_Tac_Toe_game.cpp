@@ -4,8 +4,7 @@ using namespace std;
 char board[3][3] = {{'1','2','3'},
                     {'4','5','6'},
                     {'7','8','9'}};
-char player = 'X';
-
+char player;
 void drawBoard() {
    cout << "*******************************   Tic Tac Toe  ******************************" << endl;
    for (int i = 0; i < 3; i++) {
@@ -18,6 +17,8 @@ void drawBoard() {
 
 void takeTurn() {
    int choice;
+   cout<<"enter the X and O turn by turn :"; //which player is playing 1 or 2;
+   cin>>player;
    cout << "Player " << player << ", enter a number: ";
    cin >> choice;
 
@@ -47,7 +48,13 @@ bool checkWin() {
          return true;
       }
    }
-
+   
+    //check vertical column
+ for(int i=0;i<3;i++)
+ {
+    if(board[0][i]==board[1][i] && board[1][i]==board[2][i])
+     return true;
+ }
    
 
    // Check diagonals for a win
